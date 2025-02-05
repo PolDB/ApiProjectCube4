@@ -8,11 +8,11 @@ import java.io.Serializable;
 @Getter
 public class AuthResponse implements Serializable {
     private String username;
-    private String role;
+    private String password;
 
-    public AuthResponse(String username, String role) {
+    public AuthResponse(String username, String password) {
         this.username = username;
-        this.role = role;
+        this.password = password;
     }
 
 }

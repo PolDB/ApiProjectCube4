@@ -27,7 +27,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Identifiants incorrects");
         }
 
-        AuthResponse response = new AuthResponse(user.getUsername(), user.getRole());
+        AuthResponse response = new AuthResponse(user.getUsername(), user.getPassword());
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body(response);
     }
 }

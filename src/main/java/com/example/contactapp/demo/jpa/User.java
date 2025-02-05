@@ -2,6 +2,7 @@ package com.example.contactapp.demo.jpa;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 @Entity
@@ -10,6 +11,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Setter
     @Getter
     private String username;
     @Getter
@@ -21,5 +23,6 @@ public class User {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
 
     }
+
 }
 
