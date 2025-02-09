@@ -1,4 +1,4 @@
-package com.example.contactapp.demo.testsController;
+package com.example.contactapp.demo.tests.testsController;
 
 import com.example.contactapp.demo.ServiceApi.SiteService;
 import com.example.contactapp.demo.jpa.Site;

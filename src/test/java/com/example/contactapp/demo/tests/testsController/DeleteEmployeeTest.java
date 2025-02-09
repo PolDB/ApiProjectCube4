@@ -1,8 +1,7 @@
-package com.example.contactapp.demo.testsController;
+package com.example.contactapp.demo.tests.testsController;
 
-import com.example.contactapp.demo.ControlerApi.DepartmentController;
+import com.example.contactapp.demo.ControlerApi.EmployeeController;
 import com.example.contactapp.demo.ServiceApi.EmployeeService;
-import com.example.contactapp.demo.ServiceApi.DepartmentService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -15,14 +14,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-@WebMvcTest(DepartmentController.class)
-class DeleteDepartmentTest {
+@WebMvcTest(EmployeeController.class)
+class DeleteEmployeeTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @MockBean
-    private DepartmentService departmentService;
 
     @MockBean
     private EmployeeService employeeService;
@@ -31,23 +27,23 @@ class DeleteDepartmentTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void testDeleteDepartment() throws Exception {
+    void testDeleteEmployee() throws Exception {
         // GIVEN
-        Long departmentId = 42L;
-        String expectedMessage = "Department deleted successfully";
+        Long employeeId = 4L;
+        String expectedMessage = "Site deleted successfully";
 
         // On simule la réponse de departmentService.deleteDepartment()
-        Mockito.when(departmentService.deleteDepartment(anyLong()))
+        Mockito.when(employeeService.deleteEmployee(anyLong()))
                 .thenReturn(expectedMessage);
 
         // WHEN - On envoie une requête DELETE vers /api/department/42
-        mockMvc.perform(delete("/api/department/{id}", departmentId))
+        mockMvc.perform(delete("/api/employees/{id}", employeeId))
 
                 // THEN - On vérifie la réponse
                 .andExpect(status().isOk())
                 .andExpect(content().string(expectedMessage));
 
         // On peut vérifier que departmentService.deleteDepartment a bien été appelé
-        Mockito.verify(departmentService).deleteDepartment(departmentId);
+        Mockito.verify(employeeService).deleteEmployee(employeeId);
     }
 }

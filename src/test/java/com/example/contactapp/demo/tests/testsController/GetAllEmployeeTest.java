@@ -1,4 +1,4 @@
-package com.example.contactapp.demo.testsController;
+package com.example.contactapp.demo.tests.testsController;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,7 +17,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @ExtendWith(MockitoExtension.class)
 class GetAllEmployeeTest {

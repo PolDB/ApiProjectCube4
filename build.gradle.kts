@@ -27,7 +27,12 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	implementation ("org.springframework.security:spring-security-crypto:5.7.3")
+	testImplementation ("junit:junit:4.13.2")
+	testImplementation ("org.mockito:mockito-core:4.8.0")
+	testImplementation ("org.mockito:mockito-core:4.2.0")
+	testImplementation ("org.mockito:mockito-junit-jupiter:4.2.0")
 }
+
 
 tasks.withType<Test> {
 	useJUnitPlatform()

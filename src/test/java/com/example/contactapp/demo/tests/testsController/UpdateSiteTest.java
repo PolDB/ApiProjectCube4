@@ -1,11 +1,8 @@
-package com.example.contactapp.demo.testsController;
+package com.example.contactapp.demo.tests.testsController;
 
-import com.example.contactapp.demo.ControlerApi.DepartmentController;
 import com.example.contactapp.demo.ControlerApi.SiteController;
 import com.example.contactapp.demo.ServiceApi.EmployeeService;
 import com.example.contactapp.demo.ServiceApi.SiteService;
-import com.example.contactapp.demo.jpa.Department;
-import com.example.contactapp.demo.ServiceApi.DepartmentService;
 import com.example.contactapp.demo.jpa.Site;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
